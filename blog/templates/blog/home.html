@@ -1,9 +1,14 @@
 
-<h1> this is home.html </h1>
+<center><h1> this is home.html </h1></center>
 
+<center>
+    {% for article in articles %}
 
-{% for article in articles %}
+        <a href="{{article.slug}}"><h1> {{article.title}} </h1></a>
+        <img src="{{article.thumbnail.url}}" height=200 width=500>
+        <h2> {{article.description}} </h2>
+        <h3> {{article.published}} </h3>
 
-<img src="{{article.image}}">
+    {% endfor %}
+</center>
 
-{% endfor %}
