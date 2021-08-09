@@ -65,14 +65,10 @@ class Gregorian:
             year = int(date[0])
             month = int(date[1])
             day = int(date[2])
-        else:
-            raise Exception("Invalid Input")
 
         # Check the validity of input date
-        try:
-            datetime.datetime(year, month, day)
-        except:
-            raise Exception("Invalid Date")
+        
+        datetime.datetime(year, month, day)
 
         self.gregorian_year = year
         self.gregorian_month = month

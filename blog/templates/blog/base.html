@@ -53,19 +53,17 @@ https://templatemo.com/tm-541-host-cloud
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
+                <a class="nav-link" href="{% url 'blog:home' %}">خانه
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html">Our Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
+              {% for category in categories %}
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">{{category.title}}
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
           <div class="functional-buttons">
