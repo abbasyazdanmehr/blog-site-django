@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+      <!-- Page Content -->
+      <!-- Heading Starts Here -->
+      <div class="page-heading header-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>{{article.title}}</h1>
+              <p>{{article.description}}</p>
+              <p>{{article.published}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Heading Ends Here -->
+
+      <center>
+        <img src="{{article.thumbnail.url}}">
+      </center>
+
+{% endblock content %}
+
