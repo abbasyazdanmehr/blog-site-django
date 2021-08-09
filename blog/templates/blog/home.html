@@ -38,7 +38,7 @@
                 </div>
                 <a href="{% url 'blog:detail' article.slug %}"><h4>{{article.title}}</h4></a>
                 <p>{{article.description|truncatewords:40}}</p>
-                <p>{{article.published}}</p>
+                <p>{{article.j_published}}</p>
               </div>
             </div>          
           {% endfor %}
