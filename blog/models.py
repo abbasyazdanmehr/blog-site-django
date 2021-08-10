@@ -45,4 +45,7 @@ class Article(models.Model):
     def j_published(self):
         return jalali_convertor(self.published) 
     
+    def category_publish(self):
+        return self.category.filter(status=True)
+    
     
