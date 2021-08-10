@@ -1,0 +1,95 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+    
+  {% block content %}
+  <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="header-text caption">
+              <h2>Best Articles Are Here</h2>
+              <div id="search-section">
+               <div class="advSearch_chkbox">
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+    
+    <!-- Features Starts Here -->
+    <div class="features-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>ARTICLES list</h2>
+            </div>
+          </div>
+          {% for article in categories.articles.all %}
+            <div class="col-md-6">
+              <div class="feature-item">
+                <div class="icon">
+                  <img src="{% static 'blog/assets/images/feature-01.png'%}" alt="">
+                </div>
+                <a href="{% url 'blog:detail' article.slug %}"><h4>{{article.title}}</h4></a>
+                <p>{{article.description|truncatewords:40}}</p>
+                <p>{{article.j_published}}</p>
+              </div>
+            </div>          
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+    <!-- Features Ends Here -->
+
+    <!-- Testimonials Starts Here -->
+    <div class="testimonials-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <span>Testimonials</span>
+              <h2>What they say about us</h2>
+            </div>
+          </div>
+          <div class="col-md-10 offset-md-1">
+            <div class="owl-testimonials owl-carousel">
+              <div class="testimonial-item">
+                <div class="icon">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p>"Ut elementum a elit sed tristique. Pellentesque sed semper erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean quam erat, rutrum ut malesuada."</p>
+                <h4>William Smith</h4>
+                <span>New Co-Founder</span>
+              </div>
+              <div class="testimonial-item">
+                <div class="icon">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p>"Quisque lacinia sed velit et maximus. Quisque dictum, lacus a malesuada finibus, arcu magna luctus risus, eu accumsan risus elit vitae lacus."</p>
+                <h4>Vinny Smart</h4>
+                <span>Digital Marketer</span>
+              </div>
+              <div class="testimonial-item">
+                <div class="icon">
+                  <i class="fa fa-quote-right"></i>
+                </div>
+                <p>"Vestibulum mauris ipsum, tempor tincidunt justo sit amet, bibendum tincidunt dui. Aenean molestie, odio quis viverra ultricies, leo tellus lacinia neque, sit amet maximus tortor nunc aliquet felis."</p>
+                <h4>Trevor Liam</h4>
+                <span>Technology Chef</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonials Ends Here -->
+  
+  {% endblock content %}
+    

@@ -1,4 +1,5 @@
 {% load static %}
+{% load base_tags %}
 
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-    <title>Host Cloud - Free HTML5 Bootstrap Template</title>
+    <title>{{title}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'blog/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="{% static 'blog/assets/css/fontawesome.css'%}">
     <link rel="stylesheet" href="{% static 'blog/assets/css/templatemo-host-cloud.css' %}">
     <link rel="stylesheet" href="{% static 'blog/assets/css/owl.css'%}">
+    <link rel="stylesheet" href="{% static 'blog/assets/css/rtl.css'%}">
 <!--
 
 Host Cloud Template
@@ -46,32 +48,11 @@ https://templatemo.com/tm-541-host-cloud
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>BEST<em>ARTICLES</em></h2></a>
+          <a class="navbar-brand" href="index.html"><h2>{% title %}</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'blog:home' %}">خانه
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              {% for category in categories %}
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">{{category.title}}
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="functional-buttons">
-            <ul>
-              <li><a href="#">Log in</a></li>
-              <li><a href="#">Sign Up</a></li>
-            </ul>
-          </div>
+          {% category_nav %}
         </div>
       </nav>
     </header>
