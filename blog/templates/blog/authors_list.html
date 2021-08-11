@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+    
+  {% block content %}
+  <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="header-text caption">
+              <h2> نویسندگان </h2>
+              <div id="search-section">
+               <div class="advSearch_chkbox">
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+    
+    <!-- Features Starts Here -->
+    <div class="features-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>لیست نویسندگان</h2>
+            </div>
+          </div>
+          {% for author in authors %}
+            <div class="col-md-6">
+              <div class="feature-item">
+                <div class="icon">
+                  <img src="{% static 'blog/assets/images/feature-01.png'%}" alt="">
+                </div>
+                <a href="#"><h4>نام: {{author.get_full_name}}</h4></a>
+                <p>ایمیل: {{author.email}}</p>
+                <p>تاریخ پیوستن: {{author.date_joined}}</p>
+              </div>
+            </div>          
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+    <!-- Features Ends Here -->
+  
+  {% endblock content %}

@@ -9,15 +9,6 @@
     {% for category in categories %} {% if category.parent == None %}
     <li class="nav-item active">
       <a class="nav-link" href="{% url 'blog:category' category.slug %}">{{category.title}}</a>
-        {% if category.children.all %}
-            {% for cat in category.children.all %}
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'blog:category' category.slug %}">{{cat}}</a>
-                    </li>
-                </ul>
-            {% endfor %}
-        {% endif %}
       <span class="sr-only">(current)</span>
     </li>
     {% endif %} {% endfor %}
