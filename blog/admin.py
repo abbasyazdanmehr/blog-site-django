@@ -3,6 +3,9 @@ from .models import Article, Category
 
 # Register your models here.
 
+# Admin customization
+admin.site.site_header = "هولولولولو"
+
 # Actions
 def make_published(modeladmin, request, queryset):
     rows_update = queryset.update(status='p')
