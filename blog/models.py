@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from extensions.utils import jalali_convertor
+from django.utils.html import format_html
 
 # Create your models here.
 
@@ -51,4 +52,7 @@ class Article(models.Model):
     def category_publish(self):
         return self.category.filter(status=True)
     
+    def thumbnail_tag(self):
+        return format_html("<img src='{}' height=45 width=80>".format(self.thumbnail.url))
+    thumbnail_tag.short_description = "عکس مقاله"
     
