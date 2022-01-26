@@ -6,8 +6,8 @@ This project was my first encountering to django. It contains back-end and front
 Creating, Seeing, Updating and Deleting Article From Django admin panel And then seeing in the main site.
 Managing the permission for different people.
 This was a learning project from 
-(Silicium youtube channel)[https://www.youtube.com/watch?v=XVNnOa41jT0&list=PLAt10Vana3YeAwS_LyLCeu7chml8eP8bh] and 
-(Django Site)[https://www.djangoproject.com/].
+[Silicium youtube channel](https://www.youtube.com/watch?v=XVNnOa41jT0&list=PLAt10Vana3YeAwS_LyLCeu7chml8eP8bh) and 
+[Django Site](https://www.djangoproject.com/).
 
 
 
