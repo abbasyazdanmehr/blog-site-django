@@ -38,3 +38,5 @@ python manage.py runserver
 
 **Admin Site**: http://127.0.0.1:8000/admin/ (you can sign in with (username='ali', password='1'))
 
+
+6. Shut down site: Ctrl + C
